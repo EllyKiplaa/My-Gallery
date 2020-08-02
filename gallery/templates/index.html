@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{block.super}}
+
+<div class="container-fluid text-center landing" >
+<h1 class="mb-4 d-none d-md-block text-center" style="padding-top: 150px;font-size: 80px;font-family: 'Oleo Script', cursive;color:burlywood">
+  <marquee> <strong>Welcome To My Gallery</strong></marquee>
+</h1>
+<p style="color: rgb(200, 100, 20);font-size: 15px">Search for photos from categories such as Food, Sports, People, Nature and plants</p><br>
+<div style="padding-bottom: 100px">
+<a target="_blank" href="{%url 'gallery'%}" class="btn btn-success">View Gallery</a>
+</div>
+</div>
+
+
+{% endblock %}
