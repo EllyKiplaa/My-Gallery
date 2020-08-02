@@ -1,21 +1,23 @@
 {% load bootstrap3 %}
+{% load static%}
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
 
   {% if title %}
-  <title>Moringa Tribune - {{title}}</title>
+  <title>Images-Gallery - {{title}}</title>
   {% else %}
-    <title> Moringa Tribune </title>
+    <title> Images-Gallery </title>
   {% endif %}
 
   {% block styles %}
-    {% bootstrap_css %}
+    {% bootstrap_css %}<link rel="stylesheet" href="{% static 'css/basegallery.css' %}">
   {% endblock %}
 
 </head>
 <body>
+    {% include "navbar.html" %}
     {% block content %} <h1 class='text-center'>Gallery for {{date|date:"l d-F Y"}}</h1> {%endblock%}
 
     {% block scripts %}
