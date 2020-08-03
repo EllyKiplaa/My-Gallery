@@ -1,1 +1,4 @@
 .vscode
+  photo/__pycache__/
+   gallery/migrations/__pycache__/
+    gallery/__pycache__/
