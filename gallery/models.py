@@ -1,4 +1,5 @@
 from django.db import models
+import datetime as dt
 
 # Create your models here.
 class Location(models.Model):
@@ -23,6 +24,7 @@ class Image(models.Model):
     image_name = models.CharField(max_length =30)
     image_description = models.TextField()
     image_path = models.ImageField(upload_to = 'gallery/')
+    pub_date = models.DateTimeField(auto_now=True)
     image_location = models.ForeignKey(Location, on_delete=models.CASCADE)
     image_category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
