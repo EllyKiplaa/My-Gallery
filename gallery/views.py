@@ -6,8 +6,8 @@ import datetime as dt
 from .models import Image, Category, Location
 
 # Create your views here.
-def index(request):
-    return render(request, 'index.html')
+# def index(request):
+#     return render(request, 'index.html')
 
 def gallery(request):
     images = Image.objects.all()

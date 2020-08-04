@@ -2,20 +2,14 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<style>
-    body {
-        background-image: url("https://cdn.pixabay.com/photo/2020/07/01/16/59/cherries-5360265_960_720.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-</style>
+
 
 <div class="container text-center">
     {% if images  %}
     
-    <h5>Found {{ images | length }} of search term {{message}}</h5>
+    <h5 style="font-family: 'Timmana', sans-serif; font-size: 30px; color:#FF5733;">Found {{ images | length }} of search term {{message}}</h5>
     {% else %}
-    <h5> Found 0 images for the search term {{message}}</h5>
+    <h5 style="font-family: 'Timmana', sans-serif; font-size: 30px; color:#FF5733;"> Found 0 images for the search term {{message}}</h5>
     {% endif %}
 </div>
 
@@ -67,6 +61,12 @@
     {% endif %}
     
   </div>
-
+<style>
+    body {
+        background-image: url("https://images.unsplash.com/photo-1510070112810-d4e9a46d9e91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
 </div>
 {% endblock %}
