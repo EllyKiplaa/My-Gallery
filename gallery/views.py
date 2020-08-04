@@ -15,14 +15,22 @@ def gallery(request):
     location = Location.objects.all()
     return render(request, 'gallery.html', locals())
 
-def search_category(request):
+def search_results(request):
+    
     if 'image' in request.GET and request.GET["image"]:
         search_term = request.GET.get("image")
         searched_images = Image.search_by_image_category(search_term)
         message = f"{search_term}"
 
-        return render(request, 'category.html', {"message": message, "images": searched_images})
+        return render(request, 'search.html', {"message": message, "images": searched_images})
 
     else:
         message = "You haven't searched for any term"
-        return render(request, 'category.html', {"message": message})
+        return render(request, 'search.html', {"message": message})
+
+
+def filter_by_location(request,image_location_id):
+    images = Image.objects.filter(id=image_location_id)
+
+    return render(request, 'location.html', {"images": images})
+    

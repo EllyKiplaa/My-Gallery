@@ -3,29 +3,44 @@
 {% block content %}
 {{block.super}}
 
+
 <style>
     body {
-        background-image: url("https://images.unsplash.com/photo-1503327431567-3ab5e6e79140?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80");
+        background-image: url("https://cdn.pixabay.com/photo/2020/07/01/16/59/cherries-5360265_960_720.jpg");
         background-repeat: no-repeat;
         background-size: cover;
     }
 </style>
 
 
+<br>
+
+<br>
+
+<br>
+
+<br>
 <!-- Page Content -->
 <section class="py-5">
   <div class="container-fluid">
-    <div class="container-fluid text-center landing" >
+    <div class="container-fluid text-center landing">
 <h1 class="mb-4 d-none d-md-block text-center">
-  <marquee> <strong>Welcome To My Gallery</strong></marquee>
+  <marquee> <strong style="font-family: 'Diplomata', cursive; background-color: white; color:blue;">Welcome To My Gallery</strong></marquee>
 </h1>
 
-<p style="color: rgb(200, 100, 20);font-size: 15px">Search for photos from categories such as Food, Sports, People, Nature and plants</p><br>
+<p style="font-family: 'Timmana', sans-serif; font-size: 30px; color:green;">Search for photos from categories such as Sports, Fruits, Mansion, Nature, Animals and Cars</p><br>
 <div style="padding-bottom: 100px">
-<a target="_blank" href="{%url 'gallery'%}" class="btn btn-success">View Gallery</a>
+<a target="_blank" href="{%url 'gallery'%}" class="btn btn-warning">View Gallery</a>
 </div>
 </div>
+  {% for image in images %}
 
+    <div class="col-md-3 col-sm-3 col-xs-3">
+      <img src="{{image.image_path.url}}" class="img-responsive img-fluid img-thumbnail" style="width: 100%;height:200px"
+        data-toggle="modal" data-target="#{{ image.id }}" data-backdrop="false">
+    </div>
+
+    {% endfor %}
   </div>
 </section>
 
