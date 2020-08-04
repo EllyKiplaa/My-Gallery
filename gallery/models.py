@@ -32,19 +32,15 @@ class Image(models.Model):
         return self.image_name
 
     @classmethod
-    def search_by_category(cls,search_term):
-        search_result = cls.objects.filter(image_category__cat_name__icontains=search_term)
-        return search_result
+    def search_by_image_category(cls,search_term):
+        search_result = cls.objects.filter(image_category__category_name__icontains=search_term)
+        return search_result;
+
 
     @classmethod
     def get_image_by_id(cls,incoming_id):
         image_result = cls.objects.get(id=incoming_id)
-        return image_result
-
-    def save_image(self):
-        self.save()
-    def delete_image(self):
-        self.delete()
+        return image_result;
 
     @classmethod
     def retrieve_all(cls):
@@ -56,9 +52,9 @@ class Image(models.Model):
     @classmethod
     def update_image(cls,current_value,new_value):
         fetched_object = Image.objects.filter(image_name=current_value).update(image_name=new_value)
-        return fetched_object
+        return fetched_object;
 
     @classmethod
     def filter_by_location(cls,location):
-        filtered_result = cls.objects.filter(image_location__location_name__icontains=location)
-        return filtered_result    
+        filtered_result = cls.objects.filter(image_location_id=location)
+        return filtered_result;   
