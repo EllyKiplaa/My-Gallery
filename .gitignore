@@ -1,4 +1,6 @@
 .vscode
-  photo/__pycache__/
-   gallery/migrations/__pycache__/
-    gallery/__pycache__/
+photo/__pycache__/
+gallery/migrations/__pycache__/
+gallery/__pycache__/
+venv/
+.env
