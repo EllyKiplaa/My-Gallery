@@ -14,9 +14,10 @@
 
 {% for photo_item in images %}
 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-    <h1>{{photo_item.image_name}}</h1>
-    <p>{{photo_item.image_description}}</p>
-    <img src="{{photo_item.image_path.url}}" data-toggle="modal" class="img-responsive" alt="Image" style="max-width:200px;"{{image.image_location}}
+    <h1 style="text-align: center;">{{photo_item.image_name}}</h1>
+    <p style="text-align: center;">{{photo_item.image_description}}</p>
+    
+    <img src="{{photo_item.image_path.url}}" data-toggle="modal" class="img-responsive" alt="Image" style="text-align: center;" {{photo_item.image_location}}
 </div>
 </div>
 {% empty %}
